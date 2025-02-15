@@ -30,6 +30,7 @@ curl -fsSL https://ollama.com/install.sh | sh
 ```
 ollama run mistral
 ```
+
 Mistral, popüler ve güçlü açık kaynaklı bir dil modelidir. Ollama, farklı modelleri çalıştırmak için bir API ve CLI (komut satırı arayüzü) sunar. 
 
 Performans ve Verimlilik açısından Mistral 7B, düşük kaynak tüketimiyle güçlü sonuçlar verebilen bir modeldir.
@@ -53,6 +54,35 @@ Ollama, yerel yapay zeka modellerini optimize eden bir runtime (çalışma zaman
 
 Ollama, **GGUF (GPTQ, GGML)** formatındaki modellere odaklanır, yani düşük RAM tüketimi ile CPU/GPU üzerinde optimize çalışabilir.
 
+## OLLAMA Modellerini Kullanma 
+
+Ollama'nın ana komutları Şunlardır:
+
+**Bir modeli çalıştırma:**
+
+```
+ollama run mistral
+```
+Bu komut, Mistral modelini indirip çalıştırır ve etkileşimli bir ortam sunar.
+
+**Model indirme ve listeleme:**
+```
+ollama pull llama2
+ollama list
+```
+Bu komut Llama 2 modelini indirir ve yüklü modelleri listeler.
+
+**Modeli API olarak kullanma:**
+Ollama, REST API ile entegrasyonu destekler. 
+Bknz:Bir modeli HTTP API olarak kullanmak için:
+
+```
+curl http://localhost:11434/api/generate -d '{
+  "model": "mistral",
+  "prompt": "Merhaba,"
+}'
+```
+Bu istek (request) Ollama sunucusu üzerinden Mistral modelini çalıştırıp cevap almayı sağlar.
 <br>
 
 ![DOCKEROLLAMA](./dockerollama.png)
